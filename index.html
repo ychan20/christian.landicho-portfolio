@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christian Landicho | IT Freelancer for Churches</title>
+  <meta name="description" content="IT freelance portfolio of Christian Landicho for churches, schools, and training centers in the Philippines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #0d1324;
+      --card: #11182b;
+      --line: rgba(255,255,255,.09);
+      --text: #f8fafc;
+      --muted: #a7b0c4;
+      --brand: #38bdf8;
+      --brand2: #a78bfa;
+      --green: #34d399;
+      --shadow: 0 20px 50px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #070b14, #0b1020 48%, #070b14);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, calc(100% - 32px)); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7, 11, 20, .84);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .logo span:first-child {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color: white;
+    }
+
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-weight: 600; font-size: .92rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      background: rgba(255,255,255,.07);
+      border: 1px solid var(--line);
+      transition: .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.11); }
+    .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand2)); border: 0; color: white; }
+
+    .hero { padding: 88px 0 52px; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
+
+    .badge {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #dbeafe;
+      background: rgba(255,255,255,.05);
+      font-size: .88rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: .98;
+      letter-spacing: -.07em;
+      margin-bottom: 20px;
+    }
+
+    .gradient {
+      background: linear-gradient(135deg, #fff, #bfdbfe, #c4b5fd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p { color: var(--muted); font-size: 1.08rem; max-width: 660px; margin-bottom: 26px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-mark {
+      height: 210px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,.32), transparent 26%),
+        linear-gradient(135deg, rgba(56,189,248,.85), rgba(167,139,250,.85));
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-mark strong { font-size: 5.5rem; letter-spacing: -.12em; }
+    .panel h2 { font-size: 1.35rem; letter-spacing: -.03em; margin-bottom: 8px; }
+    .panel p { color: var(--muted); }
+
+    section { padding: 62px 0; }
+    .section-head { margin-bottom: 26px; max-width: 760px; }
+    .kicker { color: var(--brand); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; margin-bottom: 8px; }
+    h3 { font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -.055em; margin-bottom: 10px; }
+    .section-head p { color: var(--muted); }
+
+    .grid { display: grid; gap: 16px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 14px 36px rgba(0,0,0,.16);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.07);
+      border: 1px solid var(--line);
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .card h4 { font-size: 1.1rem; margin-bottom: 8px; letter-spacing: -.025em; }
+    .card p, .card li { color: var(--muted); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tag { padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid var(--line); color: #dbeafe; font-size: .82rem; font-weight: 700; }
+
+    ul { list-style: none; display: grid; gap: 11px; }
+    li { display: flex; gap: 10px; align-items: flex-start; }
+    .check { color: var(--green); font-weight: 900; }
+
+    .cta {
+      text-align: center;
+      border-radius: 28px;
+      padding: 42px 24px;
+      background: linear-gradient(135deg, rgba(56,189,248,.15), rgba(167,139,250,.14));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .cta p { color: var(--muted); max-width: 680px; margin: 0 auto 22px; }
+    footer { padding: 30px 0 44px; color: var(--muted); text-align: center; border-top: 1px solid var(--line); }
+
+    @media (max-width: 850px) {
+      .hero-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 520px) {
+      .hero { padding-top: 62px; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home"><span>CL</span><span>Christian Landicho</span></a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge"><span class="dot"></span> IT Freelancer for Churches in the Philippines</div>
+          <h1><span class="gradient">Christian Landicho</span></h1>
+          <p>
+            I help churches, ministries, schools, and training centers build simple, secure, and practical IT systems — from websites and CMS platforms to church management systems, LMS Moodle setup, databases, and AI-assisted workflows.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:cllandicho@gmail.com">Connect With Me</a>
+            <a class="btn" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div class="profile-mark"><strong>CL</strong></div>
+          <h2>IT • Web Systems • Church Tech</h2>
+          <p>
+            Freelance IT support focused on affordable, maintainable technology for Philippine churches and faith-based organizations.
+          </p>
+          <div class="tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Generative AI</span>
+            <span class="tag">CMS</span>
+            <span class="tag">Moodle LMS</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Freelance Services</div>
+          <h3>IT solutions for churches and ministries</h3>
+          <p>Lightweight, practical services for organizations that need reliable systems without unnecessary complexity.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="icon">⛪</div>
+            <h4>Church Management Systems</h4>
+            <p>Member records, ministry groups, attendance, reports, events, and admin workflows.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🌐</div>
+            <h4>Church Websites & CMS</h4>
+            <p>Modern websites for announcements, sermons, events, ministries, and online presence.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎓</div>
+            <h4>LMS Moodle Setup</h4>
+            <p>Moodle learning portals for schools, TESDA programs, training centers, and church education.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🗄️</div>
+            <h4>Database Systems</h4>
+            <p>PHP and MySQL systems for records, dashboards, reports, and custom tools.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🤖</div>
+            <h4>Generative AI Workflows</h4>
+            <p>AI tools for content creation, admin productivity, training materials, and automation.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🛡️</div>
+            <h4>Cybersecurity Guidance</h4>
+            <p>Basic security awareness, safe account practices, backups, and protection for church systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Projects</div>
+          <h3>Featured work</h3>
+          <p>Systems built for real organizational needs in ministry, education, and training.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <div class="icon">⛪</div>
+            <h4>Church Management System</h4>
+            <p>A practical platform for managing church members, records, activities, ministries, and administrative tasks.</p>
+            <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">CMS</span></div>
+          </article>
+          <article class="card">
+            <div class="icon">📚</div>
+            <h4>LMS Moodle for School TESDA</h4>
+            <p>A Moodle-based learning system for TESDA school programs, online lessons, assessments, and learner tracking.</p>
+            <div class="tags"><span class="tag">Moodle</span><span class="tag">LMS</span><span class="tag">TESDA</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Certifications</div>
+          <h3>Professional credentials</h3>
+          <p>Certified across AI, cybersecurity, data analytics, networking, and TESDA training.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h4>Google & TESDA</h4>
+            <ul>
+              <li><span class="check">✓</span><span>Certified Google AI Professional</span></li>
+              <li><span class="check">✓</span><span>Google Cybersecurity</span></li>
+              <li><span class="check">✓</span><span>Google Data Analytics</span></li>
+              <li><span class="check">✓</span><span>Certified TESDA - CSS NC II Trainer</span></li>
+              <li><span class="check">✓</span><span>Certified TESDA - Cyber Security Trainer (CTM1)</span></li>
+              <li><span class="check">✓</span><span>Certified TESDA - Data Analytics Trainer</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h4>Network & Cybersecurity</h4>
+            <ul>
+              <li><span class="check">✓</span><span>Fortinet Network Security Level 1</span></li>
+              <li><span class="check">✓</span><span>Fortinet Network Security Level 2</span></li>
+              <li><span class="check">✓</span><span>Fortinet Cybersecurity</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h3>Need IT help for your church or organization?</h3>
+          <p>
+            Let’s build a simple and useful system for your church, ministry, school, or training center in the Philippines.
+          </p>
+          <a class="btn btn-primary" href="mailto:cllandicho@gmail.com">Email: cllandicho@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Christian Landicho. Built for Vercel static hosting.</div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
